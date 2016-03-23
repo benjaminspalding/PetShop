@@ -26,26 +26,26 @@ namespace Homework8.Tests.Controllers
         }
 
         [TestMethod]
-        public void About()
+        public void Inventory()
         {
             // Arrange
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            ViewResult result = controller.Inventory() as ViewResult;
 
             // Assert
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
         }
 
         [TestMethod]
-        public void Contact()
+        public void Manage()
         {
             // Arrange
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.Contact() as ViewResult;
+            ViewResult result = controller.Manage() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);

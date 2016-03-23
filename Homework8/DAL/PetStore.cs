@@ -10,10 +10,14 @@ namespace Homework8.DAL
 {
     public class PetStoreContext : DbContext
     {
-        public PetsStoreContext() : base("PetsStoreContext")
-    {
+        public PetStoreContext() : base("PetStoreContext")
+        { }
 
-    }
-
+        public DbSet<Pet> PetStore { get; set; }
+ 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
     }
 }
